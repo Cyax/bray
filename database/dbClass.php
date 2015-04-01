@@ -5,10 +5,10 @@
         protected $sqlIni;
         
         public function __construct(){
-        	$this->sqlIni = parse_ini_file("param/sql.ini");
-            $options = [];
-            
-            try { 
+            try {
+            	$this->sqlIni = parse_ini_file("../param/sql.ini");
+            	$options = [];
+            	
                 $this->datab = new PDO("mysql:host={$this->sqlIni['db_host']};dbname={$this->sqlIni['db_dbname']};charset=utf8", $this->sqlIni['db_username'], $this->sqlIni['db_password'], $options); 
                 $this->datab->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
                 $this->datab->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -27,7 +27,6 @@
         
         public function getRow($query, $params=array()) {
             try {
-            	$query = $this->getQueryFromIni($query);
                 $stmt = $this->datab->prepare($query); 
                 $stmt->execute($params);
                 return $stmt->fetch();  
@@ -61,14 +60,6 @@
         
         public function deleteRow($query, $params) {
             return $this->insertRow($query, $params);
-        }
-        
-        public function getQueryFromIni($query) {
-        	try {
-        		return $this->sqlIni[$query];
-        	} catch(Exception $e) {
-                throw new Exception($e->getMessage());
-            }   
         }
         
         /**
