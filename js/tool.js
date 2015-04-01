@@ -15,3 +15,7 @@ function checkRegex(elt, eltIcon, regex) {
 		$("span#" + eltIcon).append("<img class='icon12' src='" + $("input#errorIcon").val() + "' alt='KO' />");
 	}
 }
+
+function cssLoad(path) {
+	$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', path) );
+}

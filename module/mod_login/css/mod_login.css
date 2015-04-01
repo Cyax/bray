@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+div.mod_login {
+	border: 1px solid #000000;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+div.mod_login_field {
+	display: flex;
+}
+
+div.mod_login_label {
+	width: 90px;
+	margin: 5px;
+}
+
+div.mod_login_input input{
+	width: 150px;
+	margin: 5px;
+}

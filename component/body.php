@@ -11,4 +11,6 @@
 			<div>
 <?php require_once('component/content.php');?>
 			</div>
+			<!-- mod_login -->
+<?php require_once('module/mod_login/mod_login.php');?>
 		</div>
