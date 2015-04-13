@@ -1,7 +1,25 @@
 @CHARSET "ISO-8859-1";
 
-ul.menu li {
+ul.menu {
+	list-style-type: none;
+}
+
+ul.menu li{
 	display:inline;
+	border: 1px solid #000000;
+	padding: 0 2px 0 2px;
+	margin: 1px;
+	background-color: #888888;
+	cursor: Pointer;
+	list-style-type: none;
+}
+
+ul.subMenu {
+	position: absolute;
+	list-style-type: none;
+}
+
+ul.subMenu {
 	border: 1px solid #000000;
 	padding: 0 2px 0 2px;
 	background-color: #888888;
