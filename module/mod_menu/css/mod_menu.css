@@ -5,13 +5,14 @@ ul.menu {
 }
 
 ul.menu li{
-	display:inline;
+	display: inline-block;
 	border: 1px solid #000000;
 	padding: 0 2px 0 2px;
 	margin: 1px;
 	background-color: #888888;
 	cursor: Pointer;
 	list-style-type: none;
+	width: 100px;
 }
 
 ul.subMenu {
