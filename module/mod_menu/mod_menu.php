@@ -1,5 +1,5 @@
 <?php
-	$mod_menu_array = parse_ini_file("menuConf.ini", true);
+	$mod_menu_array = parse_ini_file("conf.ini", true);
 	echo("<script>cssLoad('module/mod_menu/css/mod_menu.css');</script>");
 	echo("<script>$.getScript('module/mod_menu/js/mod_menu.js');</script>");
 ?>
