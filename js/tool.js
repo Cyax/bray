@@ -19,3 +19,7 @@ function checkRegex(elt, eltIcon, regex) {
 function cssLoad(path) {
 	$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', path) );
 }
+
+function jsLoad(path) {
+	$.getScript(path);
+}
