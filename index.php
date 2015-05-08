@@ -1,14 +1,15 @@
 <?php
 	require_once 'database/dbClass.php';
 
-	$ini_array = parse_ini_file("param/conf.ini");
+	$GLOBALS['ini_array'] = parse_ini_file("param/conf.ini");
+	$GLOBALS['sql_array'] = parse_ini_file("param/sql.ini");
 ?>
 <!doctype html>
 <html lang="fr">
 	<head>
-<?php require_once('component/head.php');?>
+<?php include('component/head.php');?>
 	</head>
 	<body>
-<?php require_once('component/body.php');?>
+<?php include('component/body.php');?>
 	</body>
 </html>

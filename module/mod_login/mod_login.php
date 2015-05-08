@@ -1,12 +1,12 @@
 <?php
-	$mod_login_ini_array = parse_ini_file("module/mod_login/conf.ini");
+	$GLOBALS['mod_login_ini_array'] = parse_ini_file("module/mod_login/conf.ini");
 	echo("<script>cssLoad('module/mod_login/css/mod_login.css');</script>");
 	echo("<script>$.getScript('module/mod_login/js/mod_login.js');</script>");
 	echo("<script>$.getScript('module/mod_login/js/md5.js');</script>");
 ?>
 			<input type="hidden" name="mod_login_logged" value="false" />
-			<input type="hidden" name="mod_login_login_target" value="<?php echo($mod_login_ini_array['ajax_mod_login_login_target']); ?>" />
-			<input type="hidden" name="mod_login_pwd_target" value="<?php echo($mod_login_ini_array['ajax_mod_login_pwd_target']); ?>" />
+			<input type="hidden" name="mod_login_login_target" value="<?php echo($GLOBALS['mod_login_ini_array']['ajax_mod_login_login_target']); ?>" />
+			<input type="hidden" name="mod_login_pwd_target" value="<?php echo($GLOBALS['mod_login_ini_array']['ajax_mod_login_pwd_target']); ?>" />
 			<div class="mod_login">
 				<div class="mod_login_field mod_login_login_field">
 					<div class="mod_login_label">

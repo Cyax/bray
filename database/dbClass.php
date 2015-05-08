@@ -48,7 +48,7 @@ class dbClass {
 	public function insertRow($query, $params = array()) {
 		try {
 			$stmt = $this->datab->prepare ( $query );
-			$stmt->execute ( $params );
+			$stmt->execute($params);
 		} catch ( PDOException $e ) {
 			throw new Exception ( $e->getMessage () );
 		}
@@ -65,7 +65,7 @@ class dbClass {
 	/**
 	 *
 	 */
-	function sqlToXml($queryResult) {
+	private function sqlToXml($queryResult) {
 		
 		$xmlData = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\r";
 		
@@ -89,6 +89,18 @@ class dbClass {
 		$xmlData .= "</result>\r";
 		
 		return $xmlData;
+	}
+	
+	public function userExist($login, $pwd) {
+		$sqlQuery = $GLOBALS ['sql_array']['request_db_user_exist'];
+		$sqlQuery = str_replace("%0", $login, $sqlQuery);
+		$sqlQuery = str_replace("%1", $pwd, $sqlQuery);
+		
+		$resultQuery = $this->getRow($sqlQuery);
+		
+		preg_match("#<count>(.*)</count>#", $resultQuery, $result);
+		
+		return ($result[1] == '1');
 	}
 }
 ?>
